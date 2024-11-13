@@ -20,11 +20,11 @@ Variables
  --clr-primary-3: hsl(205, 72%, 37%);
  --clr-primary-4: hsl(205, 63%, 48%);
  /* primary/main color */
- --clr-primary-5: hsl(205, 78%, 60%);
+ --clr-primary-5: hsl(205deg 83.52% 8.28%);
  /* lighter shades of primary color */
- --clr-primary-6: hsl(205, 89%, 70%);
- --clr-primary-7: hsl(205, 90%, 76%);
- --clr-primary-8: hsl(205, 86%, 81%);
+ --clr-primary-6: hsl(205deg 82.88% 20.95%);
+ --clr-primary-7: hsl(205deg 15.69% 63.56%);
+ --clr-primary-8: hsl(205deg 48.99% 28.83%);
  --clr-primary-9: hsl(205, 90%, 88%);
  --clr-primary-10: hsl(205, 100%, 96%);
  /* darkest grey - used for headings */
@@ -162,11 +162,6 @@ main {
 Reviews
 ===============
 */
-main {
- min-height: 100vh;
- display: grid;
- place-items: center;
-}
 .title {
  text-align: center;
  margin-bottom: 4rem;
@@ -179,7 +174,7 @@ main {
  margin-right: auto;
 }
 .container {
- width: 80vw;
+ width: 100vw;
  max-width: var(--fixed-width);
 }
 .review {
@@ -194,12 +189,12 @@ main {
 }
 .img-container {
  position: relative;
- width: 150px;
- height: 150px;
+ width: 450px;
+ height: 600px;
  margin: 0 auto;
  margin-bottom: 1.5rem;
 }
-#person-img {
+#first-img {
  width: 100%;
  display: block;
  height: 100%;
@@ -209,7 +204,6 @@ main {
 .img-container::after {
  font-family: "Font Awesome 5 Free";
  font-weight: 900;
- content: "\f10e";
  position: absolute;
  top: 0;
  left: 0;
@@ -224,7 +218,6 @@ main {
  content: "";
  width: 110%;
  height: 110%;
- background: var(--clr-primary-5);
  position: absolute;
  top: -0.5rem;
  right: -0.5rem;
@@ -245,7 +238,7 @@ main {
 .next-btn {
  color: var(--clr-primary-7);
  font-size: 1.25rem;
- background: transparent;
+ background: #f1f1f100;
  border-color: transparent;
  margin: 0 0.5rem;
  transition: var(--transition);
@@ -270,4 +263,101 @@ main {
  background: var(--clr-primary-5);
  color: var(--clr-primary-1);
 }
+
+/*
+===============
+Navbar
+===============
+*/
+nav {
+    background: var(--clr-white);
+    box-shadow: var(--light-shadow);
+   }
+   .nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+   }
+   .nav-toggle {
+    font-size: 1.5rem;
+    color: var(--clr-primary-5);
+    background: transparent;
+    border-color: transparent;
+    transition: var(--transition);
+    cursor: pointer;
+   }
+   .nav-toggle:hover {
+    color: var(--clr-primary-1);
+    transform: rotate(90deg);
+   }
+   .logo {
+    height: 40px;
+   }
+   .links a {
+    color: var(--clr-grey-3);
+    font-size: 1rem;
+    text-transform: capitalize;
+    letter-spacing: var(--spacing);
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+   }
+   .links a:hover {
+    background: var(--clr-primary-8);
+    color: var(--clr-primary-5);
+    padding-left: 1.5rem;
+   }
+   .social-icons {
+    display: none;
+   }
+   .links {
+    height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+   }
+   .show-links {
+    height: 10rem;
+   }
+   @media screen and (min-width: 800px) {
+    .nav-center {
+      max-width: 1170px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+    .nav-header {
+      padding: 0;
+    }
+    .nav-toggle {
+      display: none;
+    }
+    .links {
+      height: auto;
+      display: flex;
+    }
+    .links a {
+      padding: 0;
+      margin: 0 0.5rem;
+    }
+    .links a:hover {
+      padding: 0;
+      background: transparent;
+    }
+    .social-icons {
+      display: flex;
+    }
+    .social-icons a {
+      margin: 0 0.5rem;
+      color: var(--clr-primary-5);
+      transition: var(--transition);
+    }
+    .social-icons a:hover {
+      color: var(--clr-primary-7);
+    }
+   }
+   
+   
 
